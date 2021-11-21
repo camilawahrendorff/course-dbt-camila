@@ -1,13 +1,14 @@
 # Questions
 ## How many users do we have?
-'''
+```
 dbt=# select count(distinct user_id) from dbt_camila_dw.stg_users;
  count 
 -------
    130
 (1 row)
-'''
+```
 ## On average, how many orders do we receive per hour?
+```
 dbt=# with time as (
 dbt(# select date_part('hour',created_at) as receive_at,
 dbt(# count(distinct order_id) as n_orders
@@ -16,8 +17,9 @@ dbt-# select avg(n_orders) from time;
          avg         
 ---------------------
  16.0000000000000000
-
+```
 ## On average, how long does an order take from being placed to being delivered?
+```
 dbt=# with diff as (
 dbt(# select date_part('day',  delivered_at -  created_at) * 24 + date_part('hour', delivered_at - created_at) as time_to_deliver
 dbt(# from public.orders)  
@@ -28,8 +30,9 @@ dbt-# from diff;
 ------------------------------
                            94
 (1 row)
-
+```
 ## How many users have only made one purchase? Two purchases? Three+ purchases?
+```
 dbt=# with amount as (
 dbt(# select 
 dbt(# user_id, 
@@ -45,8 +48,9 @@ dbt-# from amount;
 --------------+---------------+-----------------------
            25 |            22 |                    81
 (1 row)
-
+```
 ## On average, how many unique sessions do we have per hour?
+```
 dbt=# with sessions_per_hour as (
 dbt(# select  
 dbt(# date_part('hour',created_at) as hour_of_event, 
@@ -59,3 +63,4 @@ dbt-# from sessions_per_hour;
 -----------------------
   120.5600000000000000
 (1 row)
+```
