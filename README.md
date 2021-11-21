@@ -1,9 +1,3 @@
-# Analytics engineering with dbt
+# Week one 
 
-Template repository for the projects and environment of the course: Analytics engineering with dbt
-
-> Please note that this sets some environment variables so if you create some new terminals please load them again.
-
-## License
-
-Apache 2.0
+Answeres in [readme file](https://github.com/camilawahrendorff/course-dbt-camila/blob/main/dbt-greenery/models/week_one/README.md) inside models folder - week_one
