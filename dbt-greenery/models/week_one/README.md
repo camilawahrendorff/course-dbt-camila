@@ -1,11 +1,12 @@
 # Questions
 ## How many users do we have?
+'''
 dbt=# select count(distinct user_id) from dbt_camila_dw.stg_users;
  count 
 -------
    130
 (1 row)
-
+'''
 ## On average, how many orders do we receive per hour?
 dbt=# with time as (
 dbt(# select date_part('hour',created_at) as receive_at,
