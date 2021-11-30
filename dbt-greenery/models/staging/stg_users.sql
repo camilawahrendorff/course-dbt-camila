@@ -1,7 +1,6 @@
 {{
   config(
     materialized='view',
-    unique_key='dbt_scd_id'
   )
 }}
 
@@ -13,10 +12,8 @@ SELECT
     email,
     phone_number,
     created_at,
-    updated_at,
-    dbt_scd_id,
-    dbt_updated_at,
-    dbt_valid_from,
-    dbt_valid_to
+    dbt_updated_at as updated_at,
+    dbt_valid_from as valid_from,
+    dbt_valid_to as valid_to
 
 FROM {{ ref('users_snapshot') }}

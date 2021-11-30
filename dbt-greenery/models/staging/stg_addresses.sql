@@ -1,7 +1,6 @@
 {{
   config(
-    materialized='view',
-    unique_key='dbt_scd_id'
+    materialized='view'
   )
 }}
 
@@ -12,9 +11,8 @@ SELECT
     zipcode,
     state,
     country,
-    dbt_scd_id,
-    dbt_updated_at,
-    dbt_valid_from,
-    dbt_valid_to
+    dbt_updated_at as updated_at,
+    dbt_valid_from as valid_from,
+    dbt_valid_to as valid_to
 
 FROM {{ ref('addresses_snapshot') }}
