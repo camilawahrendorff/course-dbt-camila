@@ -89,4 +89,4 @@ dbt=# select sum(case when number_of_orders > 1 then 1 else 0 end)/sum(case when
 . Marketing: Models that are useful mainly for marketing
 . Product:  Models that are useful mainly for product
 
-https://8080-coral-whale-z88cim5f.ws-us20.gitpod.io/#!/overview/dbt_greenery?g_v=1
+![dbt-dag](https://user-images.githubusercontent.com/94656689/144169369-1a7b685a-61dd-4cd7-8bd3-785ea307abbb.png)
