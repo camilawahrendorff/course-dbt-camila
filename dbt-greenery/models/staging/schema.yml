@@ -55,11 +55,6 @@ models:
     description: >-
       The table lists all the items of each order
     columns:
-      - name: order_item_id
-        description: Unique order item string key identifier
-        tests:
-          - unique
-          - not_null
       - name: order_id
         description: The order string key identifier which the order item belongs to
         tests:

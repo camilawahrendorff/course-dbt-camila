@@ -94,3 +94,12 @@ dbt=# select sum(case when number_of_orders > 1 then 1 else 0 end)/sum(case when
 . Product:  Models that are useful mainly for product
 
 ![dbt-dag](https://user-images.githubusercontent.com/94656689/144169369-1a7b685a-61dd-4cd7-8bd3-785ea307abbb.png)
+
+## What assumptions are you making about each model? (i.e. why are you adding each test?)
+
+1- Unique 
+2- Not null
+## Did you find any “bad” data as you added and ran tests on your models? How did you go about either cleaning the data in the dbt model or adjusting your assumptions/tests?
+
+1- Some order items are null 
+2- 
