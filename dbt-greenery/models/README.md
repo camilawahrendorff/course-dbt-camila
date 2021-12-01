@@ -80,13 +80,17 @@ dbt=# select sum(case when number_of_orders > 1 then 1 else 0 end)/sum(case when
 ## What are good indicators of a user who will likely purchase again? What about indicators of users who are likely NOT to purchase again? If you had more data, what features would you want to look into to answer this question?
 
 . Average time between purchases 
+
 . Frequency of purchase
+
 . Website engagement 
 
 ## Explain the marts models you added. Why did you organize the models in the way you did?
 
 . Core: Models that are useful for the entire company 
+
 . Marketing: Models that are useful mainly for marketing
+
 . Product:  Models that are useful mainly for product
 
 ![dbt-dag](https://user-images.githubusercontent.com/94656689/144169369-1a7b685a-61dd-4cd7-8bd3-785ea307abbb.png)
