@@ -4,7 +4,7 @@
   )
 }}
 
-SELECT 
+SELECT distinct
     b.order_id,
     b.user_id,
     b.promo_id,

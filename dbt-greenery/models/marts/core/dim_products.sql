@@ -5,9 +5,9 @@
 }}
 
 SELECT 
-    product_id,
-    name,
+    p,product_id,
+    p.name,
     CASE WHEN quantity > 0 THEN 'out_of_stock' ELSE 'in_stock' END AS in_stock,
-    quantity 
+    p.quantity
 
-FROM {{ ref('stg_products') }}
+FROM {{ ref('stg_products') }} as p
