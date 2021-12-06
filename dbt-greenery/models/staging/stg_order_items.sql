@@ -11,4 +11,3 @@ SELECT
     quantity
     
 FROM {{ ref('order_items_snapshot') }}
-WHERE 
