@@ -20,6 +20,7 @@ SELECT distinct
     b.order_total,
     i.product_id,
     i.quantity,
+    {{ dbt_utils.datediff("created_at", "delivered_at", 'minutes') }} as delivered_time
     p.name as product_name,
     p.price as product_price,
     p.quantity as product_quantity,

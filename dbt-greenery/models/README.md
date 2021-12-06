@@ -102,4 +102,9 @@ dbt=# select sum(case when number_of_orders > 1 then 1 else 0 end)/sum(case when
 ## Did you find any “bad” data as you added and ran tests on your models? How did you go about either cleaning the data in the dbt model or adjusting your assumptions/tests?
 
 1- Some order items are null 
-2- 
+
+# Week Three
+# Questions
+## What is our overall conversion rate?
+
+## What is our conversion rate by product?
