@@ -106,5 +106,11 @@ dbt=# select sum(case when number_of_orders > 1 then 1 else 0 end)/sum(case when
 # Week Three
 # Questions
 ## What is our overall conversion rate?
-
+```
+dbt=# with base as (select count(distinct CASE WHEN is_converted then session_id end) as converted, count(distinct session_id) as total_sessions from dbt_camila_dw_marts.fct_conversion) select converted/total_sessions::decimal(32,2)*100 from base;
+        ?column?         
+-------------------------
+ 36.10108303249097472900
+(1 row)
+```
 ## What is our conversion rate by product?

@@ -4,13 +4,12 @@
   )
 }}
 
-with base as (
+WITH base as (
 SELECT 
-    page_url,
-    product_id,
-    product_name,
     session_id,
-    count(distinct user_id) as users,
+    user_id,
+    count(distinct page_url) as number_url,
+    count(distinct product_id) as number_products,
     min(created_at) as first_session,
     max(created_at) as last_session,
     {{ event_types('delete_from_cart') }},
@@ -21,7 +20,7 @@ SELECT
     {{ event_types('account_created') }}
 
 FROM {{ ref('int_events') }}
-GROUP BY 1,2,3,4
+GROUP BY 1,2
 )
 
 SELECT * 
