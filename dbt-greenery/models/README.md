@@ -114,3 +114,40 @@ dbt=# with base as (select count(distinct CASE WHEN is_converted then session_id
 (1 row)
 ```
 ## What is our conversion rate by product?
+```
+dbt=# with base as (select product_name, count(distinct CASE WHEN is_converted='t' then session_id end) as converted, count(distinct session_id) as total_sessions from dbt_camila_dw_marts.fct_page_engagement group by 1) select product_name, (converted/total_sessions::decimal(32,2)*100) as conv_rate from base;
+    product_name     |        conv_rate        
+---------------------+-------------------------
+ Alocasia Polly      | 32.86384976525821596200
+ Aloe Vera           | 35.90604026845637583900
+ Angel Wings Begonia | 35.96059113300492610800
+ Arrow Head          | 35.44303797468354430400
+ Bamboo              | 35.56149732620320855600
+ Bird of Paradise    | 35.19163763066202090600
+ Birds Nest Fern     | 34.12462908011869436200
+ Boston Fern         | 34.67741935483870967700
+ Cactus              | 35.31250000000000000000
+ Calathea Makoyana   | 35.34482758620689655200
+ Devil's Ivy         | 35.74144486692015209100
+ Dragon Tree         | 35.23809523809523809500
+ Ficus               | 35.33123028391167192400
+ Fiddle Leaf Fig     | 35.60606060606060606100
+ Jade Plant          | 35.00000000000000000000
+ Majesty Palm        | 35.17241379310344827600
+ Money Tree          | 34.79853479853479853500
+ Monstera            | 35.85657370517928286900
+ Orchid              | 34.29394812680115273800
+ Peace Lily          | 34.26294820717131474100
+ Philodendron        | 37.17472118959107806700
+ Pilea Peperomioides | 36.02693602693602693600
+ Pink Anthurium      | 35.15625000000000000000
+ Ponytail Palm       | 34.47098976109215017100
+ Pothos              | 35.62753036437246963600
+ Rubber Plant        | 35.61643835616438356200
+ Snake Plant         | 37.45318352059925093600
+ Spider Plant        | 36.19402985074626865700
+ String of pearls    | 36.88524590163934426200
+ ZZ Plant            | 36.07594936708860759500
+                     | 34.35754189944134078200
+(31 rows)
+```

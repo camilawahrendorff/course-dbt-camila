@@ -5,14 +5,19 @@
 }}
 
 SELECT 
-    event_id,
-    event_type,
-    session_id,
-    user_id,
-    page_url,
-    created_at,
-    product_id,
-    name as product_name
+    e.event_id,
+    e.event_type,
+    e.session_id,
+    e.user_id,
+    e.page_url,
+    e.created_at,
+    o.product_id,
+    o.product_name,
+    o.product_price,
+    o.order_cost,
+    o.product_quantity,
+    delivered_time
 
-FROM {{ ref('stg_events') }}
-LEFT JOIN {{ ref('stg_products') }} USING (product_id)
+
+FROM {{ ref('stg_events') }} e
+LEFT JOIN {{ ref('fct_orders') }} o USING (user_id)
