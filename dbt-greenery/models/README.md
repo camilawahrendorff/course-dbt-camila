@@ -164,3 +164,21 @@ dbt=# select * from dbt_camila_dw_marts.product_funnel;
 (1 row)
 
 ```
+
+## 2A Reflecting on your learning in this class.
+
+## If your organization is thinking about using dbt, how would you pitch the value of dbt/analytics engineering to a decision maker at your organization?
+```
+I would present the benefits of having a tool that can provide an effective solution for data transformation, quality assurance and data governance 
+```
+if your organization is using dbt, what are 1-2 things you might do differently / recommend to your organization based on learning from this course?
+
+```
+The way that the repos are organized and add the exposure
+```
+
+if you are thinking about moving to analytics engineering, what skills have you picked that give you the most confidence in pursuing this next step?
+
+```
+I've learned more about dbt functionalities
+```
