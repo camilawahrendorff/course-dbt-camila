@@ -1,0 +1,16 @@
+version: 2
+
+exposures:
+  
+  - name: product_funnel
+    type: dashboard
+    maturity: high
+    description: >
+      Product funnel dashboard
+    
+    depends_on:
+      - ref('product_funnel')
+      
+    owner:
+      name: Camila Wahrendorff
+      email: myemail@domain.com

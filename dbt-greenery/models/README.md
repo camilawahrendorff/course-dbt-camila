@@ -151,3 +151,16 @@ dbt=# with base as (select product_name, count(distinct CASE WHEN is_converted='
                      | 34.35754189944134078200
 (31 rows)
 ```
+
+# Week Four
+# Questions
+## How are our users moving through the product funnel?
+## Which steps in the funnel have largest drop off points?
+```
+dbt=# select * from dbt_camila_dw_marts.product_funnel;
+ sessions | page_view | add_to_cart | checkout | page_view_dropp_off | add_to_cart_dropp_off | checkout_dropp_off | total_conversion 
+----------+-----------+-------------+----------+---------------------+-----------------------+--------------------+------------------
+     1108 |       528 |         355 |      205 |               52.00 |                 33.00 |              42.00 |            81.00
+(1 row)
+
+```
